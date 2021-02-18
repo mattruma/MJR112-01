@@ -11,7 +11,15 @@
 <body>
   <main>
     <h1>Hello world! - from Vanilla JavaScript App</h1>
+    <h3></h3>
   </main>
 </body>
+
+<script>
+    (async function() {
+      let { text } = await( await fetch('/api/message')).json();
+      document.querySelector('h3').textContent = text;
+    }())
+  </script>
 
 </html>
